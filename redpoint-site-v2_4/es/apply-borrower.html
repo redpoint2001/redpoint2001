@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solicitud del Comprador — REDPOINT Mortgage PLLC</title>
+<meta name="description" content="Complete su informacion de comprador para su expediente de prestamo de REDPOINT Mortgage.">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <img src="../logo-light-header.png" alt="REDPOINT Mortgage PLLC" class="brand-logo">
+    </a>
+    <nav class="links">
+      <a href="index.html">Inicio</a>
+      <a href="about.html">Nosotros</a>
+      <a href="services.html">Servicios</a>
+      <a href="calculator.html">Calculadora</a>
+      <a href="land-program.html">Financiamiento</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+    <a href="apply.html" class="nav-cta">Iniciar solicitud</a>
+    <div class="lang-toggle"><a href="../apply-borrower.html">EN</a><span class="sep">|</span><a href="#" class="current">ES</a></div>
+  </div>
+</header>
+
+<main>
+
+  <section class="blueprint" style="padding-top:96px; padding-bottom:56px;">
+    <div class="wrap">
+      <div class="eyebrow"><span class="rule"></span>COMPRADOR — PASO 2 DE 2</div>
+      <h1>Complete su expediente.</h1>
+      <p class="lede mt-24">Su prestamista ya envio la propiedad y los terminos. Unas pocas pantallas breves, luego un enlace seguro para verificar su identificacion.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap" style="max-width:720px;">
+
+      <form action="https://formspree.io/f/xgogdbyo" method="POST" data-wizard>
+        <input type="hidden" name="form_type" value="borrower_application">
+
+        <div class="wizard-progress" data-wizard-progress></div>
+        <div class="wizard-label" data-wizard-label></div>
+
+        <!-- STEP 1: Buyer 1 contact -->
+        <div class="wizard-step" data-step="1" data-step-title="Your info">
+          <div class="field">
+            <label for="b1_name">Nombre legal completo</label>
+            <input type="text" id="b1_name" name="buyer1_name" required>
+          </div>
+          <div class="field">
+            <label for="b1_email">Correo electronico</label>
+            <input type="email" id="b1_email" name="buyer1_email" required>
+          </div>
+          <div class="field">
+            <label for="b1_cell">Celular</label>
+            <input type="tel" id="b1_cell" name="buyer1_cell" required>
+          </div>
+          <div class="field">
+            <label for="b1_home">Telefono de casa</label>
+            <input type="tel" id="b1_home" name="buyer1_home_phone">
+          </div>
+          <div class="field">
+            <label for="b1_marital">Estado civil</label>
+            <select id="b1_marital" name="buyer1_marital_status">
+              <option value="single">Soltero(a)</option>
+              <option value="married">Casado(a)</option>
+              <option value="separated">Separado(a)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="b1_military">¿Esta en servicio militar activo?</label>
+            <select id="b1_military" name="buyer1_active_military">
+              <option value="no">No</option>
+              <option value="yes">Si</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- STEP 2: Buyer 1 address -->
+        <div class="wizard-step" data-step="2" data-step-title="Your address">
+          <div class="field">
+            <label for="b1_mail_addr">Direccion postal</label>
+            <input type="text" id="b1_mail_addr" name="buyer1_mailing_address" required>
+          </div>
+          <div class="field">
+            <label for="b1_mail_city">Ciudad</label>
+            <input type="text" id="b1_mail_city" name="buyer1_mailing_city" required>
+          </div>
+          <div class="field">
+            <label for="b1_mail_state">Estado</label>
+            <input type="text" id="b1_mail_state" name="buyer1_mailing_state" required>
+          </div>
+          <div class="field">
+            <label for="b1_mail_zip">Codigo postal</label>
+            <input type="text" id="b1_mail_zip" name="buyer1_mailing_zip" required>
+          </div>
+          <div class="toggle-row mt-16">
+            <input type="checkbox" id="same_address" name="same_address">
+            <label for="same_address">La direccion fisica es la misma que la postal</label>
+          </div>
+          <div class="field">
+            <label for="b1_phys_addr">Direccion fisica</label>
+            <input type="text" id="b1_phys_addr" name="buyer1_physical_address">
+          </div>
+          <div class="field">
+            <label for="b1_phys_city">Ciudad</label>
+            <input type="text" id="b1_phys_city" name="buyer1_physical_city">
+          </div>
+          <div class="field">
+            <label for="b1_phys_state">Estado</label>
+            <input type="text" id="b1_phys_state" name="buyer1_physical_state">
+          </div>
+          <div class="field">
+            <label for="b1_phys_zip">Codigo postal</label>
+            <input type="text" id="b1_phys_zip" name="buyer1_physical_zip">
+          </div>
+        </div>
+
+        <!-- STEP 3: Co-buyer -->
+        <div class="wizard-step" data-step="3" data-step-title="Co-borrower">
+          <div class="toggle-row">
+            <input type="checkbox" id="has_cobuyer" name="has_cobuyer">
+            <label for="has_cobuyer">Hay un segundo comprador en esta solicitud</label>
+          </div>
+          <div class="co-buyer-fields" id="cobuyer-fields">
+            <div class="field">
+              <label for="b2_name">Nombre legal completo del comprador 2</label>
+              <input type="text" id="b2_name" name="buyer2_name">
+            </div>
+            <div class="field">
+              <label for="b2_email">Correo del comprador 2</label>
+              <input type="email" id="b2_email" name="buyer2_email">
+            </div>
+            <div class="field">
+              <label for="b2_cell">Celular del comprador 2</label>
+              <input type="tel" id="b2_cell" name="buyer2_cell">
+            </div>
+            <div class="field">
+              <label for="b2_marital">Estado civil del comprador 2</label>
+              <select id="b2_marital" name="buyer2_marital_status">
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="separated">Separated</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: Deal reference -->
+        <div class="wizard-step" data-step="4" data-step-title="Deal reference">
+          <div class="field">
+            <label for="referring_partner">¿Quien lo refirio? (nombre del prestamista)</label>
+            <input type="text" id="referring_partner" name="referring_partner" required>
+          </div>
+          <div class="field">
+            <label for="notes">Algo mas que debamos saber</label>
+            <textarea id="notes" name="notes"></textarea>
+          </div>
+        </div>
+
+        <!-- STEP 5: Review -->
+        <div class="wizard-step" data-step="5" data-step-title="Review & submit">
+          <div class="callout">Despues de enviar, recibira un enlace seguro por correo para subir su identificacion y completar la verificacion de identidad. No recopilamos su numero de Seguro Social, fecha de nacimiento, o licencia de conducir aqui — eso ocurre solo en el paso encriptado.</div>
+          <p class="fine">Verifique su correo y telefono arriba — asi es como le enviaremos el enlace seguro.</p>
+        </div>
+
+        <div class="wizard-nav">
+          <button type="button" class="btn-back" data-wizard-back>← Atras</button>
+          <button type="button" class="btn btn-ghost" data-wizard-next>Siguiente →</button>
+          <button type="submit" class="btn btn-point" data-wizard-submit style="display:none;">Enviar mi informacion →</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="stack">
+        <div class="brand"><img src="../logo-light-header.png" alt="REDPOINT Mortgage PLLC" class="brand-logo"></div>
+        <p class="fine mt-16">REDPOINT Mortgage PLLC origina prestamos residenciales, de inversion y de construccion.<br><b>NMLS #2572321</b> · Igualdad de Oportunidad de Vivienda.</p>
+      </div>
+      <div class="foot-links">
+        <a href="index.html">Inicio</a>
+        <a href="about.html">Nosotros</a>
+        <a href="services.html">Servicios</a>
+        <a href="contact.html">Contacto</a>
+      </div>
+    </div>
+    <p class="fine mt-40">© 2026 REDPOINT Mortgage PLLC. Todos los derechos reservados. Esto no es un compromiso de prestamo. Tasas y programas sujetos a aprobacion de suscripcion.</p>
+  </div>
+</footer>
+
+<script src="../wizard.js"></script>
+<script>
+  document.getElementById('same_address').addEventListener('change', function () {
+    ['b1_phys_addr','b1_phys_city','b1_phys_state','b1_phys_zip'].forEach(function (id) {
+      document.getElementById(id).closest('.field').style.display = this.checked ? 'none' : 'block';
+    }, this);
+  });
+  document.getElementById('has_cobuyer').addEventListener('change', function () {
+    document.getElementById('cobuyer-fields').classList.toggle('active', this.checked);
+  });
+</script>
+</body>
+</html>

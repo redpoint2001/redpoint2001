@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortgage Payment Calculator — REDPOINT Mortgage PLLC</title>
+<meta name="description" content="Estimate your monthly mortgage payment with REDPOINT Mortgage PLLC's payment calculator.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <img src="logo-light-header.png" alt="REDPOINT Mortgage PLLC" class="brand-logo">
+    </a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="calculator.html" class="active">Calculator</a>
+      <a href="land-program.html">Owner Financing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="nav-cta">Start an application</a>
+    <div class="lang-toggle"><a href="#" class="current">EN</a><span class="sep">|</span><a href="es/calculator.html">ES</a></div>
+  </div>
+</header>
+
+<main>
+
+  <section class="blueprint" style="padding-top:96px; padding-bottom:56px;">
+    <div class="wrap">
+      <div class="eyebrow"><span class="rule"></span>PAYMENT CALCULATOR</div>
+      <h1>Estimate your monthly payment.</h1>
+      <p class="lede mt-24">Adjust loan amount, rate, and term to see an estimated principal &amp; interest payment. This is a planning estimate — your actual rate and payment depend on underwriting.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="calc-shell">
+
+        <div class="calc-inputs">
+
+          <div class="slider-row">
+            <div class="slider-head">
+              <label for="loanAmount">Loan Amount</label>
+              <span class="slider-val" id="loanAmountVal">$350,000</span>
+            </div>
+            <input type="range" id="loanAmount" min="50000" max="1500000" step="5000" value="350000">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-head">
+              <label for="rate">Interest Rate</label>
+              <span class="slider-val" id="rateVal">6.50%</span>
+            </div>
+            <input type="range" id="rate" min="2" max="12" step="0.125" value="6.5">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-head">
+              <label for="term">Loan Term</label>
+              <span class="slider-val" id="termVal">30 years</span>
+            </div>
+            <input type="range" id="term" min="10" max="30" step="5" value="30">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-head">
+              <label for="downPayment">Down Payment</label>
+              <span class="slider-val" id="downPaymentVal">$70,000 (20%)</span>
+            </div>
+            <input type="range" id="downPayment" min="0" max="500000" step="5000" value="70000">
+          </div>
+
+          <p class="calc-note">Estimate reflects principal &amp; interest only. Property taxes, homeowners insurance, mortgage insurance, and HOA dues are not included and will affect your actual monthly payment.</p>
+        </div>
+
+        <div class="calc-output">
+          <div class="calc-result">
+            <div class="label">Estimated Monthly Payment</div>
+            <div class="amount" id="monthlyPayment">$1,770<span>/mo</span></div>
+          </div>
+          <div class="calc-breakdown">
+            <div class="row">
+              <div class="k">Loan Principal</div>
+              <div class="v" id="principalOut">$280,000</div>
+            </div>
+            <div class="row">
+              <div class="k">Total of Payments</div>
+              <div class="v" id="totalPaid">$637,200</div>
+            </div>
+            <div class="row">
+              <div class="k">Total Interest</div>
+              <div class="v blue" id="totalInterest">$357,200</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-point mt-40" style="width:100%; justify-content:center;">Get a real quote →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="blueprint" style="border-bottom:none;">
+    <div class="wrap">
+      <div class="eyebrow"><span class="rule"></span>GOOD TO KNOW</div>
+      <h2>What this estimate doesn't include.</h2>
+      <ul class="hairline-list mt-40">
+        <li><span class="term">Taxes & insurance</span><span class="def">Most monthly payments (PITI) also include property tax and homeowners insurance escrow.</span></li>
+        <li><span class="term">Mortgage insurance</span><span class="def">Down payments under 20% typically require PMI or MIP, added to the monthly payment.</span></li>
+        <li><span class="term">Your actual rate</span><span class="def">Rate depends on credit, loan program, and market conditions at the time you lock.</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="stack">
+        <div class="brand"><img src="logo-light-header.png" alt="REDPOINT Mortgage PLLC" class="brand-logo"></div>
+        <p class="fine mt-16">REDPOINT Mortgage PLLC originates residential, investment, and construction loans.<br><b>NMLS #2572321</b> · Equal Housing Opportunity.</p>
+      </div>
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <p class="fine mt-40">© 2026 REDPOINT Mortgage PLLC. All rights reserved. This is not a commitment to lend. Rates and programs subject to underwriting approval. Calculator results are estimates only and not a loan offer.</p>
+  </div>
+</footer>
+
+<script>
+  const loanAmountEl = document.getElementById('loanAmount');
+  const rateEl = document.getElementById('rate');
+  const termEl = document.getElementById('term');
+  const downPaymentEl = document.getElementById('downPayment');
+
+  const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+
+  function syncDownPaymentMax(){
+    downPaymentEl.max = Math.max(0, Number(loanAmountEl.value) - 25000);
+    if (Number(downPaymentEl.value) > Number(downPaymentEl.max)) {
+      downPaymentEl.value = downPaymentEl.max;
+    }
+  }
+
+  function calculate(){
+    syncDownPaymentMax();
+
+    const homePrice = Number(loanAmountEl.value);
+    const down = Number(downPaymentEl.value);
+    const principal = Math.max(homePrice - down, 1000);
+    const annualRate = Number(rateEl.value);
+    const years = Number(termEl.value);
+    const n = years * 12;
+    const r = (annualRate / 100) / 12;
+
+    let monthly;
+    if (r === 0) {
+      monthly = principal / n;
+    } else {
+      monthly = principal * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    }
+
+    const totalPaid = monthly * n;
+    const totalInterest = totalPaid - principal;
+    const downPct = homePrice > 0 ? Math.round((down / homePrice) * 100) : 0;
+
+    document.getElementById('loanAmountVal').textContent = fmt(homePrice);
+    document.getElementById('rateVal').textContent = annualRate.toFixed(3).replace(/0+$/,'').replace(/\.$/,'') + '%';
+    document.getElementById('termVal').textContent = years + ' years';
+    document.getElementById('downPaymentVal').textContent = fmt(down) + ' (' + downPct + '%)';
+
+    document.getElementById('monthlyPayment').innerHTML = fmt(monthly) + '<span>/mo</span>';
+    document.getElementById('principalOut').textContent = fmt(principal);
+    document.getElementById('totalPaid').textContent = fmt(totalPaid);
+    document.getElementById('totalInterest').textContent = fmt(totalInterest);
+  }
+
+  [loanAmountEl, rateEl, termEl, downPaymentEl].forEach(el => {
+    el.addEventListener('input', calculate);
+  });
+
+  calculate();
+</script>
+
+</body>
+</html>

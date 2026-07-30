@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Pago Hipotecario — REDPOINT Mortgage PLLC</title>
+<meta name="description" content="Estime su pago hipotecario mensual con la calculadora de pagos de REDPOINT Mortgage PLLC.">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <img src="../logo-light-header.png" alt="REDPOINT Mortgage PLLC" class="brand-logo">
+    </a>
+    <nav class="links">
+      <a href="index.html">Inicio</a>
+      <a href="about.html">Nosotros</a>
+      <a href="services.html">Servicios</a>
+      <a href="calculator.html" class="active">Calculadora</a>
+      <a href="land-program.html">Financiamiento</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+    <a href="contact.html" class="nav-cta">Iniciar solicitud</a>
+    <div class="lang-toggle"><a href="../calculator.html">EN</a><span class="sep">|</span><a href="#" class="current">ES</a></div>
+  </div>
+</header>
+
+<main>
+
+  <section class="blueprint" style="padding-top:96px; padding-bottom:56px;">
+    <div class="wrap">
+      <div class="eyebrow"><span class="rule"></span>CALCULADORA DE PAGOS</div>
+      <h1>Estime su pago mensual.</h1>
+      <p class="lede mt-24">Ajuste el monto del préstamo, la tasa y el plazo para ver un pago estimado de capital e interés. Esto es una estimación de planificación — su tasa y pago reales dependen de la suscripción.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="calc-shell">
+
+        <div class="calc-inputs">
+
+          <div class="slider-row">
+            <div class="slider-head">
+              <label for="loanAmount">Monto del Préstamo</label>
+              <span class="slider-val" id="loanAmountVal">$350,000</span>
+            </div>
+            <input type="range" id="loanAmount" min="50000" max="1500000" step="5000" value="350000">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-head">
+              <label for="rate">Tasa de Interés</label>
+              <span class="slider-val" id="rateVal">6.50%</span>
+            </div>
+            <input type="range" id="rate" min="2" max="12" step="0.125" value="6.5">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-head">
+              <label for="term">Plazo del Préstamo</label>
+              <span class="slider-val" id="termVal">30 años</span>
+            </div>
+            <input type="range" id="term" min="10" max="30" step="5" value="30">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-head">
+              <label for="downPayment">Pago Inicial</label>
+              <span class="slider-val" id="downPaymentVal">$70,000 (20%)</span>
+            </div>
+            <input type="range" id="downPayment" min="0" max="500000" step="5000" value="70000">
+          </div>
+
+          <p class="calc-note">La estimación refleja solo capital e interés. Impuestos de propiedad, seguro de vivienda, seguro hipotecario y cuotas de HOA no están incluidos y afectarán su pago mensual real.</p>
+        </div>
+
+        <div class="calc-output">
+          <div class="calc-result">
+            <div class="label">Pago Mensual Estimado</div>
+            <div class="amount" id="monthlyPayment">$1,770<span>/mes</span></div>
+          </div>
+          <div class="calc-breakdown">
+            <div class="row">
+              <div class="k">Capital del Préstamo</div>
+              <div class="v" id="principalOut">$280,000</div>
+            </div>
+            <div class="row">
+              <div class="k">Total de Pagos</div>
+              <div class="v" id="totalPaid">$637,200</div>
+            </div>
+            <div class="row">
+              <div class="k">Interés Total</div>
+              <div class="v blue" id="totalInterest">$357,200</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-point mt-40" style="width:100%; justify-content:center;">Obtener una cotización real →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="blueprint" style="border-bottom:none;">
+    <div class="wrap">
+      <div class="eyebrow"><span class="rule"></span>BUENO SABER</div>
+      <h2>Lo que esta estimación no incluye.</h2>
+      <ul class="hairline-list mt-40">
+        <li><span class="term">Impuestos y seguro</span><span class="def">La mayoría de los pagos mensuales (PITI) también incluyen el impuesto de propiedad y el depósito de seguro de vivienda.</span></li>
+        <li><span class="term">Seguro hipotecario</span><span class="def">Pagos iniciales menores al 20% típicamente requieren PMI o MIP, añadido al pago mensual.</span></li>
+        <li><span class="term">Su tasa real</span><span class="def">La tasa depende del crédito, el programa de préstamo y las condiciones del mercado al momento de bloquear.</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="stack">
+        <div class="brand"><img src="../logo-light-header.png" alt="REDPOINT Mortgage PLLC" class="brand-logo"></div>
+        <p class="fine mt-16">REDPOINT Mortgage PLLC origina préstamos residenciales, de inversión y de construcción.<br><b>NMLS #2572321</b> · Igualdad de Oportunidad de Vivienda.</p>
+      </div>
+      <div class="foot-links">
+        <a href="index.html">Inicio</a>
+        <a href="about.html">Nosotros</a>
+        <a href="services.html">Servicios</a>
+        <a href="calculator.html">Calculadora</a>
+        <a href="contact.html">Contacto</a>
+      </div>
+    </div>
+    <p class="fine mt-40">© 2026 REDPOINT Mortgage PLLC. Todos los derechos reservados. Esto no es un compromiso de préstamo. Tasas y programas sujetos a aprobación de suscripción. Los resultados de la calculadora son solo estimaciones y no una oferta de préstamo.</p>
+  </div>
+</footer>
+
+<script>
+  const loanAmountEl = document.getElementById('loanAmount');
+  const rateEl = document.getElementById('rate');
+  const termEl = document.getElementById('term');
+  const downPaymentEl = document.getElementById('downPayment');
+
+  const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+
+  function syncDownPaymentMax(){
+    downPaymentEl.max = Math.max(0, Number(loanAmountEl.value) - 25000);
+    if (Number(downPaymentEl.value) > Number(downPaymentEl.max)) {
+      downPaymentEl.value = downPaymentEl.max;
+    }
+  }
+
+  function calculate(){
+    syncDownPaymentMax();
+
+    const homePrice = Number(loanAmountEl.value);
+    const down = Number(downPaymentEl.value);
+    const principal = Math.max(homePrice - down, 1000);
+    const annualRate = Number(rateEl.value);
+    const years = Number(termEl.value);
+    const n = years * 12;
+    const r = (annualRate / 100) / 12;
+
+    let monthly;
+    if (r === 0) {
+      monthly = principal / n;
+    } else {
+      monthly = principal * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    }
+
+    const totalPaid = monthly * n;
+    const totalInterest = totalPaid - principal;
+    const downPct = homePrice > 0 ? Math.round((down / homePrice) * 100) : 0;
+
+    document.getElementById('loanAmountVal').textContent = fmt(homePrice);
+    document.getElementById('rateVal').textContent = annualRate.toFixed(3).replace(/0+$/,'').replace(/\.$/,'') + '%';
+    document.getElementById('termVal').textContent = years + ' años';
+    document.getElementById('downPaymentVal').textContent = fmt(down) + ' (' + downPct + '%)';
+
+    document.getElementById('monthlyPayment').innerHTML = fmt(monthly) + '<span>/mes</span>';
+    document.getElementById('principalOut').textContent = fmt(principal);
+    document.getElementById('totalPaid').textContent = fmt(totalPaid);
+    document.getElementById('totalInterest').textContent = fmt(totalInterest);
+  }
+
+  [loanAmountEl, rateEl, termEl, downPaymentEl].forEach(el => {
+    el.addEventListener('input', calculate);
+  });
+
+  calculate();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enviar un Trato — REDPOINT Mortgage PLLC</title>
+<meta name="description" content="Prestamistas: envien la propiedad, los cargos, y los terminos de financiamiento para iniciar un expediente de REDPOINT Mortgage.">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <img src="../logo-light-header.png" alt="REDPOINT Mortgage PLLC" class="brand-logo">
+    </a>
+    <nav class="links">
+      <a href="index.html">Inicio</a>
+      <a href="about.html">Nosotros</a>
+      <a href="services.html">Servicios</a>
+      <a href="calculator.html">Calculadora</a>
+      <a href="land-program.html">Financiamiento</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+    <a href="apply.html" class="nav-cta">Iniciar solicitud</a>
+    <div class="lang-toggle"><a href="../apply-partner.html">EN</a><span class="sep">|</span><a href="#" class="current">ES</a></div>
+  </div>
+</header>
+
+<main>
+
+  <section class="blueprint" style="padding-top:96px; padding-bottom:56px;">
+    <div class="wrap">
+      <div class="eyebrow"><span class="rule"></span>PRESTAMISTA — PASO 1 DE 2</div>
+      <h1>Envie el trato.</h1>
+      <p class="lede mt-24">Unas pocas pantallas breves sobre la informacion de contacto del comprador, la propiedad, y los terminos. El pago y los costos de cierre se calculan mientras avanza. Al enviar, contactamos al comprador directamente para completar su parte.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap" style="max-width:720px;">
+
+      <form data-wizard id="dealForm">
+        <input type="hidden" name="form_type" value="lender_deal_submission">
+        <input type="hidden" name="lang" value="es">
+
+        <div class="wizard-progress" data-wizard-progress></div>
+        <div class="wizard-label" data-wizard-label></div>
+
+        <!-- STEP 1: Your info -->
+        <div class="wizard-step" data-step="1" data-step-title="Your info">
+          <div class="callout" id="rememberedNotice" style="display:none;">Reconocimos este nombre — completamos su correo, telefono, y compania abajo. ¿No es correcto? Solo edite los campos.</div>
+          <div class="field">
+            <label for="lender_name">Su nombre completo</label>
+            <input type="text" id="lender_name" name="lender_name" list="lenderNameList" required>
+            <datalist id="lenderNameList"></datalist>
+            <p class="fine mt-8">¿Ya envio antes? Comience a escribir y completaremos el resto.</p>
+          </div>
+          <div class="field">
+            <label for="lender_email">Su correo electronico</label>
+            <input type="email" id="lender_email" name="lender_email" required>
+          </div>
+          <div class="field">
+            <label for="lender_phone">Su telefono</label>
+            <input type="tel" id="lender_phone" name="lender_phone" required>
+          </div>
+          <div class="field">
+            <label for="lender_company">Compania / oficina (si esta enviando en nombre de una)</label>
+            <input type="text" id="lender_company" name="lender_company" list="companyList">
+            <datalist id="companyList"></datalist>
+          </div>
+        </div>
+
+        <!-- STEP 2: Buyer contact -->
+        <div class="wizard-step" data-step="2" data-step-title="Buyer contact">
+          <div class="field">
+            <label for="buyer_name">Nombre completo del comprador</label>
+            <input type="text" id="buyer_name" name="buyer_name" required>
+          </div>
+          <div class="field">
+            <label for="buyer_email">Correo del comprador</label>
+            <input type="email" id="buyer_email" name="buyer_email" required>
+          </div>
+          <div class="field">
+            <label for="buyer_phone">Celular del comprador</label>
+            <input type="tel" id="buyer_phone" name="buyer_phone" required>
+          </div>
+        </div>
+
+        <!-- STEP 3: Property -->
+        <div class="wizard-step" data-step="3" data-step-title="Property">
+          <div class="field">
+            <label for="lot_number">Lote #</label>
+            <input type="text" id="lot_number" name="lot_number">
+          </div>
+          <div class="field">
+            <label for="subdivision">Subdivision</label>
+            <input type="text" id="subdivision" name="subdivision">
+          </div>
+          <div class="field">
+            <label for="county">Condado</label>
+            <input type="text" id="county" name="county">
+          </div>
+          <div class="field">
+            <label for="property_address">Direccion de la propiedad</label>
+            <input type="text" id="property_address" name="property_address" required>
+          </div>
+          <div class="field">
+            <label for="sale_price">Precio de venta</label>
+            <input type="number" id="sale_price" name="sale_price" placeholder="$" required min="0" step="0.01">
+          </div>
+        </div>
+
+        <!-- STEP 4: Financing terms -->
+        <div class="wizard-step" data-step="4" data-step-title="Financing terms">
+          <div class="field">
+            <label for="down_payment">Pago inicial</label>
+            <input type="number" id="down_payment" name="down_payment" placeholder="$" min="0" step="0.01">
+          </div>
+          <div class="field">
+            <label for="amount_financed">Monto del prestamo (monto financiado)</label>
+            <input type="number" id="amount_financed" name="amount_financed" placeholder="$" required min="0" step="0.01">
+            <p class="fine mt-8" id="autoFinancedHint" style="display:none;">Se completa automaticamente como precio de venta menos pago inicial. Edite si es diferente.</p>
+          </div>
+          <div class="field">
+            <label for="interest_rate">Tasa de interes (%)</label>
+            <input type="number" id="interest_rate" name="interest_rate" placeholder="%" required min="0" step="0.001">
+          </div>
+          <div class="field">
+            <label for="years_financed">Anos financiados</label>
+            <input type="number" id="years_financed" name="years_financed" min="1" step="1" required placeholder="ej. 15">
+            <div class="mt-8" style="display:flex; gap:8px;">
+              <button type="button" class="btn-back years-preset" data-years="15" style="padding:8px 16px; font-size:0.82rem;">15</button>
+              <button type="button" class="btn-back years-preset" data-years="20" style="padding:8px 16px; font-size:0.82rem;">20</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="monthly_payment">Pago mensual de capital e interes</label>
+            <input type="text" id="monthly_payment" name="monthly_payment" placeholder="$" required>
+            <p class="fine mt-8" id="autoPaymentHint">Calculado automaticamente segun el monto del prestamo, la tasa, y el plazo. Editelo directamente si este trato esta estructurado diferente — <a href="#" id="recalcLink" style="color:var(--point); text-decoration:underline;">recalcular</a>.</p>
+          </div>
+          <div class="field">
+            <label for="monthly_tax_escrow">Deposito mensual de impuestos</label>
+            <input type="number" id="monthly_tax_escrow" name="monthly_tax_escrow" placeholder="$" min="0" step="0.01">
+          </div>
+          <div class="field">
+            <label for="late_charge">Cargo por atraso / despues de cuantos dias</label>
+            <input type="text" id="late_charge" name="late_charge" placeholder="ej. $50 despues de 15 dias">
+          </div>
+          <div class="field">
+            <label for="second_lien">¿Segundo gravamen al cierre?</label>
+            <select id="second_lien" name="second_lien">
+              <option value="no">No</option>
+              <option value="yes">Si</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- STEP 5: Closing costs -->
+        <div class="wizard-step" data-step="5" data-step-title="Closing costs">
+          <p class="fine" style="margin-bottom:22px;">Los cargos de originacion, registro, y administracion estan pre-llenados con sus montos usuales — ajuste cualquiera si este trato es diferente. Agregue el seguro ya que ese varia de trato en trato.</p>
+          <div class="field">
+            <label for="origination_fee">Cargo de originacion</label>
+            <input type="number" id="origination_fee" name="origination_fee" value="400" min="0" step="0.01" class="closing-input">
+          </div>
+          <div class="field">
+            <label for="recording_fee">Cargo de registro</label>
+            <input type="number" id="recording_fee" name="recording_fee" value="110" min="0" step="0.01" class="closing-input">
+          </div>
+          <div class="field">
+            <label for="admin_fee">Cargo administrativo</label>
+            <input type="number" id="admin_fee" name="admin_fee" value="275" min="0" step="0.01" class="closing-input">
+          </div>
+          <div class="field">
+            <label for="tax_escrow_upfront">Deposito de impuestos (inicial)</label>
+            <input type="number" id="tax_escrow_upfront" name="tax_escrow_upfront" value="100" min="0" step="0.01" class="closing-input">
+          </div>
+          <div class="field">
+            <label for="insurance_cost">Seguro</label>
+            <input type="number" id="insurance_cost" name="insurance_cost" placeholder="$" min="0" step="0.01" class="closing-input">
+          </div>
+          <div class="contact-card mt-24">
+            <div class="contact-row" style="border-top:none; padding-top:0;">
+              <div class="k">Total</div>
+              <div class="v" style="font-size:1.4rem; font-family:var(--display); color:var(--point);" id="closingTotalDisplay">$885.00</div>
+            </div>
+          </div>
+          <input type="hidden" id="total_closing_costs" name="total_closing_costs" value="885.00">
+          <div class="field mt-24">
+            <label for="term_notes">Notas adicionales</label>
+            <textarea id="term_notes" name="term_notes"></textarea>
+          </div>
+        </div>
+
+        <!-- STEP 6: Review -->
+        <div class="wizard-step" data-step="6" data-step-title="Review & submit">
+          <div class="callout">Verifique la informacion de contacto del comprador y la direccion de la propiedad — es lo que usamos para enviarles el siguiente paso. Todo lo demas se puede ajustar despues si es necesario.</div>
+          <p class="fine">Al enviar, este trato se envia a REDPOINT y se le envia automaticamente un correo al comprador con un enlace para completar su parte.</p>
+        </div>
+
+        <div class="wizard-nav">
+          <button type="button" class="btn-back" data-wizard-back>← Atras</button>
+          <button type="button" class="btn btn-ghost" data-wizard-next>Siguiente →</button>
+          <button type="submit" class="btn btn-point" data-wizard-submit style="display:none;">Enviar trato →</button>
+        </div>
+      </form>
+
+      <div id="submitSuccess" class="callout" style="display:none;">Trato enviado — le enviamos un correo al comprador con un enlace para completar su parte, y los detalles completos van en camino a REDPOINT.</div>
+      <div id="submitError" class="callout" style="display:none; border-color:#c0392b;"></div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="stack">
+        <div class="brand"><img src="../logo-light-header.png" alt="REDPOINT Mortgage PLLC" class="brand-logo"></div>
+        <p class="fine mt-16">REDPOINT Mortgage PLLC origina prestamos residenciales, de inversion y de construccion.<br><b>NMLS #2572321</b> · Igualdad de Oportunidad de Vivienda.</p>
+      </div>
+      <div class="foot-links">
+        <a href="index.html">Inicio</a>
+        <a href="about.html">Nosotros</a>
+        <a href="services.html">Servicios</a>
+        <a href="contact.html">Contacto</a>
+      </div>
+    </div>
+    <p class="fine mt-40">© 2026 REDPOINT Mortgage PLLC. Todos los derechos reservados. Esto no es un compromiso de prestamo. Tasas y programas sujetos a aprobacion de suscripcion.</p>
+  </div>
+</footer>
+
+<script src="../wizard.js"></script>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+
+  // ---- Remember every lender contact submitted from this device, keyed by name ----
+  // Scales to multiple offices/contacts over time — typing a known name fills the rest.
+  const CONTACTS_KEY = 'redpoint_lender_contacts';
+
+  function loadContacts() {
+    try { return JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]'); } catch (e) { return []; }
+  }
+
+  function saveContacts(list) {
+    try { localStorage.setItem(CONTACTS_KEY, JSON.stringify(list)); } catch (e) {}
+  }
+
+  function findContact(name) {
+    const key = (name || '').trim().toLowerCase();
+    if (!key) return null;
+    return loadContacts().find((c) => c.name.trim().toLowerCase() === key) || null;
+  }
+
+  function upsertContact(contact) {
+    if (!contact.name) return;
+    const list = loadContacts();
+    const key = contact.name.trim().toLowerCase();
+    const idx = list.findIndex((c) => c.name.trim().toLowerCase() === key);
+    if (idx >= 0) list[idx] = contact; else list.push(contact);
+    saveContacts(list);
+  }
+
+  function populateNameList() {
+    const datalist = $('lenderNameList');
+    datalist.innerHTML = '';
+    const companies = new Set();
+    loadContacts().forEach((c) => {
+      const opt = document.createElement('option');
+      opt.value = c.name;
+      datalist.appendChild(opt);
+      if (c.company) companies.add(c.company);
+    });
+    const companyList = $('companyList');
+    companyList.innerHTML = '';
+    companies.forEach((name) => {
+      const opt = document.createElement('option');
+      opt.value = name;
+      companyList.appendChild(opt);
+    });
+  }
+  populateNameList();
+
+  // Pre-fill with the last person used on this device, as a starting point.
+  const LAST_USED_KEY = 'redpoint_last_lender_name';
+  try {
+    const lastName = localStorage.getItem(LAST_USED_KEY);
+    if (lastName) {
+      const contact = findContact(lastName);
+      if (contact) {
+        $('lender_name').value = contact.name;
+        $('lender_email').value = contact.email || '';
+        $('lender_phone').value = contact.phone || '';
+        $('lender_company').value = contact.company || '';
+        $('rememberedNotice').style.display = 'block';
+      }
+    }
+  } catch (e) {}
+
+  // Typing/selecting a recognized name fills the rest of their info.
+  $('lender_name').addEventListener('input', function () {
+    const contact = findContact(this.value);
+    if (contact) {
+      $('lender_email').value = contact.email || '';
+      $('lender_phone').value = contact.phone || '';
+      $('lender_company').value = contact.company || '';
+      $('rememberedNotice').style.display = 'block';
+    } else {
+      $('rememberedNotice').style.display = 'none';
+    }
+  });
+
+  $('dealForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const contact = {
+      name: $('lender_name').value.trim(),
+      email: $('lender_email').value.trim(),
+      phone: $('lender_phone').value.trim(),
+      company: $('lender_company').value.trim()
+    };
+    upsertContact(contact);
+    try { localStorage.setItem(LAST_USED_KEY, contact.name); } catch (e) {}
+
+    const submitBtn = document.querySelector('[data-wizard-submit]');
+    const errorBox = $('submitError');
+    errorBox.style.display = 'none';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando…';
+
+    const formData = new FormData(this);
+    const payload = {};
+    formData.forEach((value, key) => { payload[key] = value; });
+
+    fetch('/api/submit-deal', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then((res) => res.json().then((body) => ({ ok: res.ok, body })))
+      .then(({ ok, body }) => {
+        if (!ok) throw new Error(body.error || 'Something went wrong.');
+        this.style.display = 'none';
+        $('submitSuccess').style.display = 'block';
+      })
+      .catch((err) => {
+        errorBox.textContent = 'No se pudo enviar este trato: ' + err.message + ' — intente de nuevo, o llamenos directamente.';
+        errorBox.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar trato →';
+      });
+  });
+
+  // ---- Years financed: typeable field with 15/20 quick-pick shortcuts ----
+  document.querySelectorAll('.years-preset').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      $('years_financed').value = btn.getAttribute('data-years');
+      recalcPayment();
+    });
+  });
+
+  function getYears() {
+    return parseFloat($('years_financed').value) || 0;
+  }
+
+  // ---- Auto-fill loan amount from sale price minus down payment ----
+  let amountFinancedTouched = false;
+  $('amount_financed').addEventListener('input', () => { amountFinancedTouched = true; });
+
+  function updateAmountFinanced() {
+    const sale = parseFloat($('sale_price').value) || 0;
+    const down = parseFloat($('down_payment').value) || 0;
+    if (!amountFinancedTouched && sale > 0) {
+      $('amount_financed').value = Math.max(sale - down, 0).toFixed(2);
+      $('autoFinancedHint').style.display = 'block';
+      recalcPayment();
+    }
+  }
+  $('sale_price').addEventListener('input', updateAmountFinanced);
+  $('down_payment').addEventListener('input', updateAmountFinanced);
+
+  // ---- Amortized monthly payment ----
+  let paymentTouched = false;
+  $('monthly_payment').addEventListener('input', () => { paymentTouched = true; });
+
+  function calcPayment() {
+    const principal = parseFloat($('amount_financed').value) || 0;
+    const annualRate = parseFloat($('interest_rate').value) || 0;
+    const years = getYears();
+    const n = years * 12;
+    if (principal <= 0 || years <= 0) return null;
+    if (annualRate <= 0) return principal / n;
+    const r = (annualRate / 100) / 12;
+    const payment = principal * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    return payment;
+  }
+
+  function recalcPayment(force) {
+    if (paymentTouched && !force) return;
+    const payment = calcPayment();
+    if (payment !== null) {
+      $('monthly_payment').value = payment.toFixed(2);
+    }
+  }
+
+  ['amount_financed', 'interest_rate', 'years_financed'].forEach((id) => {
+    $(id).addEventListener('input', () => recalcPayment());
+    $(id).addEventListener('change', () => recalcPayment());
+  });
+
+  $('recalcLink').addEventListener('click', function (e) {
+    e.preventDefault();
+    paymentTouched = false;
+    recalcPayment(true);
+  });
+
+  // ---- Closing costs total ----
+  const closingIds = ['origination_fee', 'recording_fee', 'admin_fee', 'tax_escrow_upfront', 'insurance_cost'];
+  function updateClosingTotal() {
+    let total = 0;
+    closingIds.forEach((id) => { total += parseFloat($(id).value) || 0; });
+    $('closingTotalDisplay').textContent = '$' + total.toFixed(2);
+    $('total_closing_costs').value = total.toFixed(2);
+  }
+  closingIds.forEach((id) => $(id).addEventListener('input', updateClosingTotal));
+  updateClosingTotal();
+})();
+</script>
+</body>
+</html>
