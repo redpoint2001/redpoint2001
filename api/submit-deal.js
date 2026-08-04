@@ -10,7 +10,7 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
 const FROM_EMAIL = 'REDPOINT Mortgage <deals@redpointmtg.com>';
 const BROKER_EMAIL = 'redpointpllc@yahoo.com';
-const SITE_URL = 'https://redpointmtg.com';
+const SITE_URL = 'https://www.redpointmtg.com';
 
 async function sendEmail({ to, subject, html }) {
   const res = await fetch('https://api.resend.com/emails', {
